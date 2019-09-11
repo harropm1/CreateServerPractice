@@ -14,19 +14,55 @@
 </head>
 
 <body>
-    <h1>Michelle is really confused, but this part works.</h1>
+    <h1>Michelle is less confused, and this part works.</h1>
+    <button type="button" class="btn btn-primary" id="leagues">Leagues</button>
+    <button type="button" class="btn btn-primary" id="teams">Teams</button>
+    <div id="msgDiv"></div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script>
+        $(function ()
+        {
+            $("#teams").on("click", function ()
+            {
+                let data;
+                $.getJSON('http://localhost:3000/teams', function ()
+                {})
+                    .done(function (data)
+                    {
+                        $("#msgDiv").html("The data is in the console, push F12 on your keyboard");
+                        console.log(data);
+                    })
+                    .fail(function ()
+                    {
+                        console.log('Error connecting to Server.');
+                    });
+            });
+            $("#leagues").on("click", function ()
+            {
+                let data;
+                $.getJSON('http://localhost:3000/leagues', function ()
+                {})
+                    .done(function (data)
+                    {
+                        $("#msgDiv").html("The data is in the console, push F12 on your keyboard");
+                        console.log(data);
+                    })
+                    .fail(function ()
+                    {
+                        console.log('Error connecting to Server.');
+                    });
+            });
+        });
+    </script>
 </body>
 
 </html>
