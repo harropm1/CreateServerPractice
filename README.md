@@ -1,1 +1,1 @@
-I am so confused. I have a hard time following this and I can't learn this way.
+I am less confused. I was having a hard time following this and still have difficulty learning in this method (seeing the code written out, but not seeing what it does at that particular moment is confusing for me).
